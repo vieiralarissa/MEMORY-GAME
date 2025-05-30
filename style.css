@@ -1,0 +1,141 @@
+body {
+  font-family: 'Fredoka', sans-serif;
+  background-image: url("images/fundo.png");
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  background-attachment: fixed;
+  text-align: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.start-screen {
+  padding: 40px 20px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #990000;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ce0000;
+}
+
+.hidden {
+  display: none;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.texto-box {
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.start-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.memory-card {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  transform: rotateY(0deg);
+}
+
+.hidden {
+  display: none;
+}
+
+.memory-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card img {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  transform: rotateY(0deg);
+}
+.game-over-message {
+  position: fixed;             
+  top: 50%;                   
+  left: 50%;                  
+  transform: translate(-50%, -50%); 
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  color: rgb(8, 10, 8);
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;        
+  animation: fadeIn 1s ease-in-out;
+  max-width: 80vw;       
+  word-wrap: break-word;
+}
+
+.game-over-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+

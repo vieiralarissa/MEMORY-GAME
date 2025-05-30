@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="icon" type="image/png" href="images/brainstorm.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="start-screen" class="start-screen">
+      <div class="texto-box">
+    <h1>Jogo da Memória: Componentes de Informática</h1>
+    <p>Descubra os pares entre os componentes do computador e seus nomes.</p>
+    
+    <button id="start-button">Iniciar Jogo</button>
+    </div>
+  </div>
+
+   <main id="game-container" class="hidden">
+    <div id="game-board" class="game-board"></div>
+    <div id="game-over-backdrop" class="game-over-backdrop hidden"></div>
+    <div id="game-over-message" class="hidden game-over-message">
+  🎉 Parabéns! Você encontrou todos os pares!</div>
+   <br><br>
+  <button id="restart-button">Jogar Novamente</button>
+   </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
