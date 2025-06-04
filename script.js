@@ -4,6 +4,14 @@
 Com tema se baseando em educação de qualidade, dentro
 dos Objetivos de Desenvolvimento Sustentável da ONU.
 */
+
+//sons do game
+const flipSound = new Audio("sounds/flip.mp3"); //som ao virar carta
+const matchSound = new Audio("sounds/match.mp3"); //som de cartas combinadas
+const wrongSound = new Audio("sounds/wrong.mp3"); //som de cartas diferentes
+const gameOverSound = new Audio("sounds/gameover.mp3"); //som ao finalizar o game
+
+//elementos da interface
 const startButton = document.getElementById('start-button');
 const startScreen = document.getElementById('start-screen');
 const gameContainer = document.getElementById('game-container');
@@ -32,6 +40,7 @@ const cards = [
   { name: "ssd", src: "images/ssd-text.png" },
 ];
 
+//controle do jogo
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -41,14 +50,15 @@ function shuffle(array) {
 }
 
 function createCards() {
-  const shuffledCards = shuffle(cards);
-  gameBoard.innerHTML = "";
+  const shuffledCards = shuffle(cards); //embaralha cartas
+  gameBoard.innerHTML = ""; 
 
   shuffledCards.forEach(card => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("memory-card");
-    cardElement.setAttribute("data-name", card.name);
+    cardElement.setAttribute("data-name", card.name);  // Guarda o nome para comparar
 
+    // define as faces da carta (frente e verso)
     cardElement.innerHTML = `
       <img class="front-face" src="${card.src}" alt="${card.name}">
       <img class="back-face" src="images/verso.png" alt="Verso">
@@ -57,19 +67,20 @@ function createCards() {
     gameBoard.appendChild(cardElement);
   });
 }
-
+//mostra todas as cartas viradas para memorizar 
 function showAllCards() {
   document.querySelectorAll(".memory-card").forEach(card => {
     card.classList.add("flip");
   });
 }
 
+//esconde as cartas
 function hideAllCards() {
   document.querySelectorAll(".memory-card").forEach(card => {
     card.classList.remove("flip");
   });
 }
-
+//habilita o clique nas cartas
 function enableCardClicks() {
   document.querySelectorAll(".memory-card").forEach(card => {
     card.addEventListener("click", flipCard);
@@ -85,6 +96,7 @@ function flipCard() {
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
+    flipSound.play();
     return;
   }
 
@@ -93,7 +105,7 @@ function flipCard() {
 
   checkForMatch();
 }
-
+//verifica se as duas cartas são iguais 
 function checkForMatch() {
   const isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
@@ -103,16 +115,18 @@ function checkForMatch() {
     unflipCards();
   }
 }
-
+//remove clique de cartas ja combinadas 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
 
+  matchSound.play();
   resetBoard();
   checkGameOver();
 }
-
+//vira para baixo cartas não combinadas
 function unflipCards() {
+  wrongSound.play();
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
@@ -125,14 +139,15 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
-
+//verifica se todas as cartas foram combinadas 
 function checkGameOver() {
   const flippedCards = document.querySelectorAll('.memory-card.flip');
   if (flippedCards.length === cards.length) {
+    gameOverSound.play();
     gameOverMessage.classList.remove('hidden');
   }
 }
-
+//reinicia o jogo
 function restartGame() {
   gameOverMessage.classList.add('hidden');
   createCards();
@@ -159,4 +174,5 @@ startButton.addEventListener("click", () => {
   }, 3000);
 });
 
+//botão de reínicio 
 restartButton.addEventListener('click', restartGame);
