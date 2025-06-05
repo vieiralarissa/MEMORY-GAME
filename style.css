@@ -33,14 +33,28 @@ button:hover {
 .hidden {
   display: none;
 }
+#game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;   /* centraliza na tela */
+
+}
+
 
 .game-board {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   padding: 10px;
-  max-width: 960px;
+  max-width: 100%;
+  width: fit-content;
   margin: 0 auto;
+  justify-content: center;
   box-sizing: border-box;
 }
 .texto-box {
@@ -139,3 +153,55 @@ button:hover {
   z-index: 999;
 }
 
+@media (max-width: 480px) {
+  .memory-card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .game-over-message {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .memory-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .game-over-message {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .memory-card {
+    width: 130px;
+    height: 130px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .memory-card {
+    width: 160px;
+    height: 160px;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
