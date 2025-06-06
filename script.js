@@ -164,6 +164,7 @@ startButton.addEventListener("click", () => {
   gameContainer.classList.remove("hidden");
 
   gameOverMessage.classList.add("hidden");
+  document.getElementById("restart-container").classList.remove("hidden");
   createCards();
 
   showAllCards();
@@ -176,3 +177,4 @@ startButton.addEventListener("click", () => {
 
 //botão de reínicio 
 restartButton.addEventListener('click', restartGame);
+""

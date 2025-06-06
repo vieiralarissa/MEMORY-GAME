@@ -74,7 +74,9 @@ button:hover {
   padding: 20px;
   text-align: center;
 }
-
+.hidden {
+  display: none !important;
+}
 .memory-card {
   width: 160px;
   height: 160px;
