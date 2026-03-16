@@ -1,4 +1,4 @@
-# 🧠 Jogo da Memória – Componentes de Informática
+# Jogo da Memória – Componentes de Informática
 
 Mini game desenvolvido como parte da **Atividade de Extensão – Tecnologia Aplicada à Inclusão Digital**, com foco no **Objetivo de Desenvolvimento Sustentável (ODS) da ONU: Educação de Qualidade**.
 
@@ -6,7 +6,7 @@ O jogo foi criado como um **recurso didático para crianças dos anos iniciais d
 
 ---
 
-# 🎯 Objetivo do Projeto
+# Objetivo do Projeto
 
 O objetivo do jogo é **estimular o aprendizado e a memória**, fazendo com que o jogador associe **imagens de componentes de computador com seus respectivos nomes**.
 
@@ -24,7 +24,7 @@ Assim, além de trabalhar a memória, o jogo contribui para o **letramento digit
 
 ---
 
-# 🎮 Como Funciona o Jogo
+# Como Funciona o Jogo
 
 1. Ao iniciar o jogo, todas as cartas aparecem **viradas para cima por alguns segundos** para que o jogador possa memorizar suas posições.
 2. Depois disso, as cartas são **viradas para baixo**.
@@ -45,7 +45,7 @@ Assim, além de trabalhar a memória, o jogo contribui para o **letramento digit
 
 ---
 
-# 🔊 Recursos do Jogo
+# Recursos do Jogo
 
 O jogo possui efeitos sonoros para melhorar a experiência do usuário:
 
@@ -56,7 +56,7 @@ O jogo possui efeitos sonoros para melhorar a experiência do usuário:
 
 ---
 
-# 🧩 Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando tecnologias web básicas:
 
@@ -74,7 +74,7 @@ Principais conceitos utilizados:
 
 ---
 
-# 📂 Estrutura do Projeto
+# Estrutura do Projeto
 
 ```
 memory-game/
@@ -99,7 +99,7 @@ memory-game/
 
 ---
 
-# ▶️ Como Executar o Projeto
+# Como Executar o Projeto
 
 1. Baixe ou clone este repositório.
 2. Abra a pasta do projeto.
@@ -109,13 +109,13 @@ Não é necessário instalar nenhuma dependência.
 
 ---
 
-# 👩‍💻 Autoria
+# Autoria
 
 Projeto desenvolvido por **Larissa Vieira** como atividade acadêmica no curso de **Análise e Desenvolvimento de Sistemas**.
 
 ---
 
-# 🌍 Relação com os ODS da ONU
+# Relação com os ODS da ONU
 
 Este projeto está relacionado ao **ODS 4 – Educação de Qualidade**, pois utiliza tecnologia digital para apoiar o processo de ensino e aprendizagem de forma acessível e interativa.
 
