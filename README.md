@@ -79,7 +79,7 @@ Principais conceitos utilizados:
 ```
 memory-game/
 │
-├── teste.html
+├── index.html
 ├── style.css
 ├── script.js
 │
@@ -103,7 +103,7 @@ memory-game/
 
 1. Baixe ou clone este repositório.
 2. Abra a pasta do projeto.
-3. Execute o arquivo **teste.html** em qualquer navegador.
+3. Execute o arquivo **index.html** em qualquer navegador.
 
 Não é necessário instalar nenhuma dependência.
 
